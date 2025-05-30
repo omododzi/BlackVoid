@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7517868098242546263}
   m_Layer: 3
   m_Name: Building_Bar
-  m_TagString: Untagged
+  m_TagString: Fallable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,8 +130,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.3578935, y: 10.411013, z: 7.4074726}
-  m_Center: {x: -0.0225451, y: 5.205495, z: 0.28388584}
+  m_Size: {x: 7.3578935, y: 8.892322, z: 7.4074726}
+  m_Center: {x: -0.0225451, y: 5.9648404, z: 0.28388596}
 --- !u!54 &-7517868098242546263
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

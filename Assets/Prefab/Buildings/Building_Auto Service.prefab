@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 215225283882089947}
   m_Layer: 3
   m_Name: Building_Auto Service
-  m_TagString: Untagged
+  m_TagString: Fallable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 18.271511, y: 6.9995446, z: 8.263669}
-  m_Center: {x: -0.2210741, y: 3.5002534, z: 0.04909706}
+  m_Size: {x: 18.271511, y: 5.9383683, z: 8.263669}
+  m_Center: {x: -0.2210741, y: 4.030842, z: 0.04909706}
 --- !u!54 &215225283882089947
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

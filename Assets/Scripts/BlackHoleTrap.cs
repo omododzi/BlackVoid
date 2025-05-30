@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BlackHoleTrap : MonoBehaviour
 {
+    /*
     [Header("Настройки")]
     [SerializeField] private float fallSpeed = 5f;
     [SerializeField] private float attractionRadius = 1f;
@@ -122,4 +123,5 @@ public class BlackHoleTrap : MonoBehaviour
         CameraFollow FC = Camera.main.GetComponent<CameraFollow>();
         FC.MakeMoreFar();
     }
+    */
 }
