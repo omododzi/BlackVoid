@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 893738283909332802}
   m_Layer: 3
   m_Name: Natures_Grass Tile
-  m_TagString: Untagged
+  m_TagString: Fallable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

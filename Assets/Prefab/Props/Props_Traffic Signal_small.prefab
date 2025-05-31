@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7666958971702007095}
   m_Layer: 3
   m_Name: Props_Traffic Signal_small
-  m_TagString: Untagged
+  m_TagString: Fallable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,8 +107,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.55200005, y: 5.628706, z: 0.6}
-  m_Center: {x: 0.0005414635, y: 2.814299, z: -0.02518022}
+  m_Size: {x: 0.55200005, y: 5.224942, z: 0.6}
+  m_Center: {x: 0.0005414486, y: 3.016181, z: -0.02518022}
 --- !u!54 &7666958971702007095
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
