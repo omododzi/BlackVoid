@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
-
+using TMPro;
 public class right : MonoBehaviour
 {
     public Transform camera;
     private static Vector3 target_position;
-    public Text text;
+    public TMP_Text  text;
     public float pos_x = 4f;
     public float speed = 4f;
     public float initialCoins = 100f; // Начальное количество монет
@@ -39,6 +38,7 @@ public class right : MonoBehaviour
 
     private void Update()
     {
+        
         Vector3 pos = new Vector3(0, 0, 0);
 
         
