@@ -578,6 +578,7 @@ MonoBehaviour:
   speed: 4
   initialCoins: 100
   coins: 0
+  obj: {fileID: 401453349}
 --- !u!1 &401453349
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +731,7 @@ MonoBehaviour:
   speed: 4
   initialCoins: 100
   coins: 0
+  obj: {fileID: 401453349}
 --- !u!1 &445084821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,8 +1285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be09044a680c4c4eb43c1fabb6fef94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt: {fileID: 1428835776}
-  CameraTransform: {fileID: 2032359162}
 --- !u!1001 &1468291747
 PrefabInstance:
   m_ObjectHideFlags: 0
