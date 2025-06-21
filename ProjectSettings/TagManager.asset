@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Fallable
+  - Ilya
+  - SP
+  - Guest
   layers:
   - Default
   - TransparentFX

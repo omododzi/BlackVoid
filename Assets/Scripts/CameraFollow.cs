@@ -3,91 +3,40 @@ using UnityEngine.EventSystems;
 
 public class CameraFollow : MonoBehaviour
 {
-    private Transform target;
-    public Vector3 offset = new Vector3(0f, 2f, -5f);
+    [Header("Настройки камеры")]
+    public float mouseSensitivity = 100f;
+    public Transform playerBody;
+    public bool lockCursor = true;
     
-    [Header("Follow Settings")]
-    [Range(0.1f, 10f)]
-    public float followSpeed = 5f;
-    
-    [Header("Rotation Settings")]
-    [Range(0.1f, 5f)]
-    public float rotationSpeed = 1f;
-    
-    [Header("Smoothing")]
-    [Range(0.01f, 0.5f)]
-    public float positionSmoothTime = 0.1f;
-    
-    public float lookAtHeightOffset = 0.5f;
+    [Header("Ограничения")]
+    public float minVerticalAngle = -90f;
+    public float maxVerticalAngle = 90f;
 
-    private Vector3 velocity = Vector3.zero;
-    private bool targetFound = false;
+    private float xRotation = 0f;
 
     void Start()
     {
-        FindTarget();
-    }
-
-    void LateUpdate()
-    {
-        if (!targetFound || target == null)
+        if (lockCursor)
         {
-            FindTarget();
-            return;
-        }
-
-        FollowTarget();
-        RotateTowardsTarget();
-    }
-
-    private void FindTarget()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null)
-        {
-            target = player.transform;
-            targetFound = true;
-            
-            // Устанавливаем начальную позицию камеры
-            transform.position = target.position + offset;
-            transform.LookAt(target.position + Vector3.up * lookAtHeightOffset);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
-    private void FollowTarget()
+    void Update()
     {
-        Vector3 desiredPosition = target.position + 
-                                target.right * offset.x + 
-                                target.up * offset.y + 
-                                target.forward * offset.z;
+        // Получаем ввод мыши
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        transform.position = Vector3.SmoothDamp(
-            transform.position,
-            desiredPosition,
-            ref velocity,
-            positionSmoothTime,
-            Mathf.Infinity, // Макс. скорость - без ограничений
-            Time.deltaTime
-        );
-    }
+        // Вертикальный поворот (вверх/вниз)
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, minVerticalAngle, maxVerticalAngle);
 
-    private void RotateTowardsTarget()
-    {
-        Vector3 lookAtPoint = target.position + Vector3.up * lookAtHeightOffset;
-        Vector3 direction = lookAtPoint - transform.position;
+        // Применяем поворот камеры
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         
-        // Используем SmoothDamp и для вращения (более плавно)
-        Quaternion desiredRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation,
-            desiredRotation,
-            rotationSpeed * Time.deltaTime
-        );
-    }
-
-    public void MakeMoreFar()
-    {
-        Vector3 newOfset = new Vector3(offset.x, offset.y+ 1, offset.z-1);
-        offset = newOfset;
+        // Горизонтальный поворот персонажа (влево/вправо)
+        playerBody.Rotate(Vector3.up * mouseX);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class move : MonoBehaviour 
@@ -11,6 +12,8 @@ public class move : MonoBehaviour
         movement();
         rotate();
     }
+
+  
     void movement()
     {
         float x = Input.GetAxis("Horizontal");
